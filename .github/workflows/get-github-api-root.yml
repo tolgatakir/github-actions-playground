@@ -14,5 +14,8 @@ jobs:
       - name: Get GitHub API Root
         run: |
           response=$(curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/)
-          echo "Response of GitHub API Root $response"  
-
+          echo "Response of GitHub API Root $response"
+      - name: Get GitHub API Meta
+        run: |
+          response=$(curl -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/meta)
+          echo "Response of GitHub API Meta $response"
